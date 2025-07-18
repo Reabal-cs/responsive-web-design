@@ -1,0 +1,204 @@
+/* Set background for full page and basic styling */
+body,
+html {
+  background-image: url("../simg/bck.jpg"); /* Background image for the whole page */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  height: 100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style links and add hover effect */
+a {
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+a:hover {
+  color: blue;
+  font-size: 18px;
+}
+
+/* Heading style */
+h1 {
+  text-align: center;
+  color: darkgoldenrod;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* Apply border-box to all elements for consistent sizing */
+* {
+  box-sizing: border-box;
+}
+
+/* Horizontal flex layout */
+.flex-container {
+  display: flex;
+  flex-wrap: nowrap; /* Keep items in a single row on large screens */
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+/* Flex item boxes */
+.flex-container > div {
+  padding: 0.5rem 1rem;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Responsive: stack flex items vertically on small screens */
+@media (max-width: 600px) {
+  .flex-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+
+/* Basic image gallery using CSS Grid */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+/* Another grid version for gallery images */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+/* Image styling inside gallery */
+.gallery-grid img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Responsive gallery: stack single column on small screens */
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-text h1 {
+    font-size: 24px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+  }
+
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Column responsiveness (fallback, optional class use) */
+@media (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Page layout using CSS Grid */
+.container {
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "menu content"
+    "footer footer";
+  grid-template-columns: 1fr 3fr;
+  gap: 5px;
+  padding: 5px;
+}
+
+/* Style all container sections */
+.container > div {
+  background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+  padding: 10px;
+}
+
+/* Named grid areas */
+.container > div.menu {
+  grid-area: menu;
+}
+.container > div.content {
+  grid-area: content;
+}
+.container > div.footer {
+  grid-area: footer;
+}
+
+/* Footer style */
+footer {
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Hero section with background */
+.hero-image {
+  background-image: url("../simg/owner.jpg"); /* Hero banner background */
+  height: 100%;
+  padding-top: 40px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Centered hero text */
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+/* Hero button style */
+.hero-text button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 10px 25px;
+  color: black;
+  background-color: #ddd;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Button hover interaction */
+.hero-text button:hover {
+  background-color: #555;
+  color: white;
+}
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-text h1 {
+    font-size: 28px;
+  }
+
+  .w3-col {
+    width: 100% !important;
+    margin-bottom: 20px;
+  }
+}
